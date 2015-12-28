@@ -35,11 +35,14 @@ function parseText(text){
 }
 
 module.exports = function(robot) {
-  return robot.hear(/^create_issue (.+)/, function(msg){
+  return robot.hear(/hoge$/, function(msg){
+    return msg.send('foo');
+  });
+  /*return robot.hear(/^create_issue (.+)/, function(msg){
     var text = msg.match[1];
     var user = msg.message.user.name;
-    var channel = robot.adapter.client.getChannelByID(msg.channel);
+    var channel = msg.message.room;
     var content = postIssue(channel, user, text);
     return msg.send(content[0] + '||' +  content[1]);
-  })
+  });*/
 }
