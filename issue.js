@@ -40,6 +40,6 @@ module.exports = function(robot) {
     var user = msg.message.user.name;
     var channel = robot.adapter.client.getChannelByID(msg.channel);
     var content = postIssue(channel, user, text);
-    msg.send(content[0] + '||' +  content[1]);
+    return msg.send(content[0] + '||' +  content[1]);
   })
 }
